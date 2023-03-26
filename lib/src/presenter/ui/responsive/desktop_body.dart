@@ -1,4 +1,6 @@
 import 'package:flutter/material.dart';
+import 'package:manga_easy_landing_page/src/presenter/ui/desktop/about_project_desktop.dart';
+import 'package:manga_easy_landing_page/src/presenter/ui/desktop/download_app_desktop.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/social_media.dart';
 
 class DesktopBody extends StatelessWidget {
@@ -9,67 +11,15 @@ class DesktopBody extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          Container(
-            width: MediaQuery.of(context).size.width,
-            color: Colors.white,
-            child: Stack(
-              children: [
-                Image.network(
-                  'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-                ),
-                Align(
-                  alignment: Alignment.topRight,
-                  child: Padding(
-                    padding: const EdgeInsets.only(right: 28, top: 100),
-                    child: Column(
-                      mainAxisAlignment: MainAxisAlignment.end,
-                      crossAxisAlignment: CrossAxisAlignment.end,
-                      children: [
-                        Text(
-                          'Aqui você pode baixar a versão\nmais recente do nosso\naplicativo.',
-                          textAlign: TextAlign.right,
-                          style: Theme.of(context)
-                              .textTheme
-                              .displaySmall!
-                              .copyWith(
-                                  color: Colors.black,
-                                  fontWeight: FontWeight.bold),
-                        ),
-                        const SizedBox(height: 10),
-                        Column(
-                          children: [
-                            SizedBox(
-                              height: 50,
-                              width: 200,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor:
-                                      const Color.fromRGBO(254, 61, 0, 1),
-                                ),
-                                onPressed: () {},
-                                child: const Text(
-                                  'Baixar agora',
-                                ),
-                              ),
-                            ),
-                            const SizedBox(height: 10),
-                            const Text('Versão 0.10.0')
-                          ],
-                        ),
-                      ],
-                    ),
-                  ),
-                ),
-              ],
-            ),
-          ),
-          const SizedBox(width: 30),
+          const DownloadAppDesktop(),
+          const AboutProjectDesktop(),
           Row(
             children: const [
               Expanded(
                 child: SocialMedia(
+                  color: Color.fromARGB(149, 0, 0, 0),
                   imageBackgroound:
-                      'https://th.bing.com/th/id/R.b784511ac1abf5c104c6a596de78a14e?rik=Vb3hZZIVSyuxrw&pid=ImgRaw&r=0',
+                      'https://media.discordapp.net/attachments/1071892919633576117/1089658638060224653/image.png?width=1259&height=413',
                   logoSocialMedia:
                       'https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png',
                   text: 'Visite a comunidade\ndo aplicativo',
@@ -79,8 +29,9 @@ class DesktopBody extends StatelessWidget {
               ),
               Expanded(
                 child: SocialMedia(
+                  color: Color.fromARGB(148, 52, 82, 255),
                   imageBackgroound:
-                      'https://th.bing.com/th/id/R.b784511ac1abf5c104c6a596de78a14e?rik=Vb3hZZIVSyuxrw&pid=ImgRaw&r=0',
+                      'https://media.discordapp.net/attachments/1071892919633576117/1089659384063344680/image.png?width=1259&height=426',
                   logoSocialMedia:
                       'https://logodownload.org/wp-content/uploads/2017/11/discord-logo-2-1.png',
                   text: 'Visite a comunidade\ndo aplicativo',
@@ -90,6 +41,7 @@ class DesktopBody extends StatelessWidget {
               ),
               Expanded(
                 child: SocialMedia(
+                  color: Color.fromARGB(147, 250, 57, 36),
                   imageBackgroound:
                       'https://media.discordapp.net/attachments/1071892919633576117/1089611345026101279/image.png?width=1178&height=522',
                   logoSocialMedia:

@@ -1,20 +1,23 @@
 import 'package:flutter/material.dart';
 import 'package:url_launcher/url_launcher.dart';
 
-
 class SocialMedia extends StatelessWidget {
   final String imageBackgroound;
   final String logoSocialMedia;
   final String text;
   final String textButton;
   final String link;
+  final Color color;
 
-  const SocialMedia(
-      {super.key,
-      required this.imageBackgroound,
-      required this.logoSocialMedia,
-      required this.text,
-      required this.textButton, required this.link});
+  const SocialMedia({
+    super.key,
+    required this.imageBackgroound,
+    required this.logoSocialMedia,
+    required this.text,
+    required this.textButton,
+    required this.link,
+    required this.color,
+  });
 
   @override
   Widget build(BuildContext context) {
@@ -28,7 +31,7 @@ class SocialMedia extends StatelessWidget {
         ),
       ),
       child: Container(
-        color: const Color.fromARGB(149, 0, 0, 0),
+        color: color,
         child: Column(
           children: [
             const SizedBox(height: 16),
