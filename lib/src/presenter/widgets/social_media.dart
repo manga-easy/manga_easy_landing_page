@@ -1,21 +1,25 @@
 import 'package:flutter/material.dart';
+import 'package:url_launcher/url_launcher.dart';
+
 
 class SocialMedia extends StatelessWidget {
   final String imageBackgroound;
   final String logoSocialMedia;
   final String text;
   final String textButton;
+  final String link;
 
   const SocialMedia(
       {super.key,
       required this.imageBackgroound,
       required this.logoSocialMedia,
       required this.text,
-      required this.textButton});
+      required this.textButton, required this.link});
 
   @override
   Widget build(BuildContext context) {
     final sizeHeight = MediaQuery.of(context).size.height;
+
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
@@ -31,7 +35,7 @@ class SocialMedia extends StatelessWidget {
             Image.network(
               logoSocialMedia,
               color: Colors.white,
-              height: sizeHeight * 0.10,
+              height: sizeHeight * 0.08,
             ),
             const SizedBox(height: 16),
             Text(
@@ -44,7 +48,7 @@ class SocialMedia extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             OutlinedButton(
-              onPressed: () {},
+              onPressed: () => launchUrl(Uri.parse(link)),
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(
                   width: 1,
@@ -59,6 +63,7 @@ class SocialMedia extends StatelessWidget {
                 ),
               ),
             ),
+            const SizedBox(height: 20),
           ],
         ),
       ),

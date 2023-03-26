@@ -74,7 +74,7 @@ class DesktopBody extends StatelessWidget {
                       'https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png',
                   text: 'Visite a comunidade\ndo aplicativo',
                   textButton: 'Visitar Comunidade',
-                  
+                  link: 'https://github.com/manga-easy',
                 ),
               ),
               Expanded(
@@ -85,6 +85,7 @@ class DesktopBody extends StatelessWidget {
                       'https://logodownload.org/wp-content/uploads/2017/11/discord-logo-2-1.png',
                   text: 'Visite a comunidade\ndo aplicativo',
                   textButton: 'Visitar Comunidade',
+                  link: 'https://discord.gg/ssp8Cr4a7u',
                 ),
               ),
               Expanded(
@@ -95,6 +96,7 @@ class DesktopBody extends StatelessWidget {
                       'https://th.bing.com/th/id/R.d880faebb3dfcb0da6b568aacf561c2a?rik=bqxPrvnatG6JIA&riu=http%3a%2f%2fgetdrawings.com%2fvectors%2fwhite-instagram-logo-vector-11.png&ehk=isFxUg5rwr7XhEmf8OtI5ao5tlhI%2f1fJnM0htGnZ3qQ%3d&risl=&pid=ImgRaw&r=0',
                   text: 'Visite a comunidade\ndo aplicativo',
                   textButton: 'Visitar Comunidade',
+                  link: 'https://www.instagram.com/mangaeasyoficial_/',
                 ),
               ),
             ],
