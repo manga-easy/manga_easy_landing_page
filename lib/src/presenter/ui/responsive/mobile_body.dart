@@ -8,10 +8,19 @@ class MobileBody extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       body: ListView(
-        children: const [
-          Expanded(
+        children: [
+          Container(
+            color: Colors.white,
+            alignment: Alignment.bottomLeft,
+            child: Image.network(
+              'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
+             
+              width: MediaQuery.of(context).size.width * 0.8,
+            ),
+          ),
+          const Expanded(
             child: SocialMedia(
-               color:  Color.fromARGB(149, 0, 0, 0),
+              color: Color.fromARGB(149, 0, 0, 0),
               imageBackgroound:
                   'https://media.discordapp.net/attachments/1071892919633576117/1089658638060224653/image.png?width=1259&height=413',
               logoSocialMedia:
@@ -21,7 +30,7 @@ class MobileBody extends StatelessWidget {
               link: 'https://github.com/manga-easy',
             ),
           ),
-          Expanded(
+          const Expanded(
             child: SocialMedia(
               color: Color.fromARGB(148, 52, 82, 255),
               imageBackgroound:
@@ -33,7 +42,7 @@ class MobileBody extends StatelessWidget {
               link: 'https://discord.gg/ssp8Cr4a7u',
             ),
           ),
-          Expanded(
+          const Expanded(
             child: SocialMedia(
               color: Color.fromARGB(147, 250, 57, 36),
               imageBackgroound:

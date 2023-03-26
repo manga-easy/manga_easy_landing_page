@@ -9,6 +9,14 @@ class TabletBody extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
+          Container(
+             alignment: Alignment.bottomLeft,
+            color: Colors.white,
+            child: Image.network(
+              'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
+              
+            ),
+          ),
           Row(
             children: const [
               Expanded(
