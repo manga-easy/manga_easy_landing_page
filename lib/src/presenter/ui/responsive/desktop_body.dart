@@ -1,6 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:manga_easy_landing_page/src/presenter/ui/desktop/about_project_desktop.dart';
 import 'package:manga_easy_landing_page/src/presenter/ui/desktop/download_app_desktop.dart';
+import 'package:manga_easy_landing_page/src/presenter/ui/desktop/welcome_desktop.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/social_media.dart';
 
 class DesktopBody extends StatelessWidget {
@@ -11,8 +12,9 @@ class DesktopBody extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          const DownloadAppDesktop(),
-          const AboutProjectDesktop(),
+          WelcomeDesktop(),
+          DownloadAppDesktop(),
+          AboutProjectDesktop(),
           Row(
             children: const [
               Expanded(

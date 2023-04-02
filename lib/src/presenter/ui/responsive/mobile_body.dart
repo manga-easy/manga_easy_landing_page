@@ -14,7 +14,6 @@ class MobileBody extends StatelessWidget {
             alignment: Alignment.bottomLeft,
             child: Image.network(
               'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-             
               width: MediaQuery.of(context).size.width * 0.8,
             ),
           ),

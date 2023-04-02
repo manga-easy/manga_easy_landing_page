@@ -34,7 +34,7 @@ class SocialMedia extends StatelessWidget {
         color: color,
         child: Column(
           children: [
-            const SizedBox(height: 16),
+            const SizedBox(height: 26),
             Image.network(
               logoSocialMedia,
               color: Colors.white,
