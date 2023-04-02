@@ -7,13 +7,10 @@ class DownloadAppDesktop extends StatelessWidget {
   Widget build(BuildContext context) {
     return Stack(
       children: [
-        Image.network(
-          'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-        ),
         Align(
           alignment: Alignment.topRight,
           child: Padding(
-            padding: const EdgeInsets.only(right: 28, top: 100),
+            padding: const EdgeInsets.only(right: 28, top: 100, bottom: 100),
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.end,
               children: [
@@ -23,7 +20,7 @@ class DownloadAppDesktop extends StatelessWidget {
                   style: Theme.of(context).textTheme.displaySmall!.copyWith(
                       color: Colors.black, fontWeight: FontWeight.bold),
                 ),
-                const SizedBox(height: 10),
+                const SizedBox(height: 40),
                 Column(
                   children: [
                     SizedBox(

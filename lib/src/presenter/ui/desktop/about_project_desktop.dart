@@ -8,7 +8,7 @@ class AboutProjectDesktop extends StatelessWidget {
     return Align(
       alignment: Alignment.bottomLeft,
       child: Padding(
-        padding: const EdgeInsets.only(left: 75, top: 200, bottom: 200),
+        padding: const EdgeInsets.only(left: 65, top: 200, bottom: 200),
         child: Column(
           crossAxisAlignment: CrossAxisAlignment.start,
           mainAxisAlignment: MainAxisAlignment.end,
@@ -22,7 +22,7 @@ class AboutProjectDesktop extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             SizedBox(
-              width: 600,
+              width: 575,
               child: Text(
                 'Nunc mi erat, molestie id sagittis nec, fermentum at sem. Aenean tempus magna lorem, at euismod urna mattis quis. Aliquam tincidunt vestibulum arcu eget finibus. Duis facilisis tincidunt tortor, et vehicula leo posuere vel. Sed porta condimentum erat vitae mollis. In porttitor ullamcorper egestas. Mauris sit amet ex quis sem imperdiet ultricies.\nNunc mi erat, molestie id sagittis nec, fermentum at sem. Aenean tempus magna lorem, at euismod urna mattis quis. Aliquam tincidunt vestibulum arcu eget finibus.',
                 textAlign: TextAlign.left,

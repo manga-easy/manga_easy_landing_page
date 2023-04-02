@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:manga_easy_landing_page/src/presenter/ui/desktop/about_project_desktop.dart';
 import 'package:manga_easy_landing_page/src/presenter/ui/desktop/download_app_desktop.dart';
-import 'package:manga_easy_landing_page/src/presenter/ui/desktop/welcome_desktop.dart';
+import 'package:manga_easy_landing_page/src/presenter/ui/desktop/introduce_desktop.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/social_media.dart';
 
 class DesktopBody extends StatelessWidget {
@@ -12,9 +12,34 @@ class DesktopBody extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          WelcomeDesktop(),
-          DownloadAppDesktop(),
-          AboutProjectDesktop(),
+          Stack(
+            children: [
+              Container(
+                color: Colors.white,
+                child: Column(
+                  children: const [
+                    IntroduceDesktop(),
+                    DownloadAppDesktop(),
+                    AboutProjectDesktop(),
+                  ],
+                ),
+              ),
+              Positioned(
+                top: 675,
+                child: Image.network(
+                  'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(top: 1175),
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Image.network(
+                      'https://media.discordapp.net/attachments/1071892919633576117/1091899844429349004/image.png?width=535&height=650'),
+                ),
+              ),
+            ],
+          ),
           Row(
             children: const [
               Expanded(
