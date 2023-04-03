@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import 'package:manga_easy_landing_page/src/presenter/ui/mobile/introduce_mobile.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/social_media.dart';
 
 class MobileBody extends StatelessWidget {
@@ -9,13 +10,21 @@ class MobileBody extends StatelessWidget {
     return Scaffold(
       body: ListView(
         children: [
-          Container(
-            color: Colors.white,
-            alignment: Alignment.bottomLeft,
-            child: Image.network(
-              'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-              width: MediaQuery.of(context).size.width * 0.8,
-            ),
+          Stack(
+            children: [
+              Container(
+                color: Colors.white,
+                child: Column(
+                  children: [
+                    IntroduceMobile(),
+                  ],
+                ),
+              ),
+            ],
+          ),
+          Image.network(
+            'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
+            width: MediaQuery.of(context).size.width * 0.8,
           ),
           const Expanded(
             child: SocialMedia(
