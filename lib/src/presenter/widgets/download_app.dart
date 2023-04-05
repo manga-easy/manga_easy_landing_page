@@ -29,7 +29,7 @@ class DownloadApp extends StatelessWidget {
                 SizedBox(
                   width: width,
                   child: Text(
-                    'Aqui você pode baixar a versão\nmais recente do nosso\naplicativo.',
+                    'Aqui você pode baixar a versão mais recente do nosso aplicativo.',
                     textAlign: textAlign ?? TextAlign.start,
                     style: Theme.of(context).textTheme.headlineMedium!.copyWith(
                         color: Colors.black, fontWeight: FontWeight.bold),
