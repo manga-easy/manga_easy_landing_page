@@ -46,7 +46,7 @@ class IntroduceDesktop extends StatelessWidget {
               width: MediaQuery.of(context).size.width * 0.5,
               color: Colors.orange,
               child: Image.network(
-                  'https://media.discordapp.net/attachments/1071892919633576117/1090335104523587594/image.png?width=413&height=650'),
+                  'https://media.discordapp.net/attachments/1071892919633576117/1092970375589154837/image_cropped.png?width=304&height=650'),
             ),
           ],
         ),
@@ -54,7 +54,8 @@ class IntroduceDesktop extends StatelessWidget {
           padding: const EdgeInsets.only(top: 100),
           child: Center(
             child: Image.network(
-                'https://media.discordapp.net/attachments/1071892919633576117/1091895232368476271/image.png?width=423&height=650'),
+              'https://media.discordapp.net/attachments/1071892919633576117/1091895232368476271/image.png?width=423&height=650',
+            ),
           ),
         ),
       ],
