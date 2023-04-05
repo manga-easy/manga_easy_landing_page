@@ -1,26 +1,41 @@
 import 'package:flutter/material.dart';
 
-class DownloadAppDesktop extends StatelessWidget {
-  const DownloadAppDesktop({super.key});
+class DownloadApp extends StatelessWidget {
+  final CrossAxisAlignment? crossAlign;
+  final TextAlign? textAlign;
+  final Alignment? alignment;
+  final EdgeInsets padding;
+  final double? width;
+
+  const DownloadApp(
+      {super.key,
+      this.textAlign,
+      this.crossAlign,
+      this.alignment,
+      required this.padding,
+      this.width});
 
   @override
   Widget build(BuildContext context) {
     return Stack(
       children: [
         Align(
-          alignment: Alignment.topRight,
+          alignment: alignment ?? Alignment.topLeft,
           child: Padding(
-            padding: const EdgeInsets.only(right: 28, top: 100, bottom: 100),
+            padding: padding,
             child: Column(
-              crossAxisAlignment: CrossAxisAlignment.end,
+              crossAxisAlignment: crossAlign ?? CrossAxisAlignment.start,
               children: [
-                Text(
-                  'Aqui você pode baixar a versão\nmais recente do nosso\naplicativo.',
-                  textAlign: TextAlign.right,
-                  style: Theme.of(context).textTheme.displaySmall!.copyWith(
-                      color: Colors.black, fontWeight: FontWeight.bold),
+                SizedBox(
+                  width: width,
+                  child: Text(
+                    'Aqui você pode baixar a versão\nmais recente do nosso\naplicativo.',
+                    textAlign: textAlign ?? TextAlign.start,
+                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
+                        color: Colors.black, fontWeight: FontWeight.bold),
+                  ),
                 ),
-                const SizedBox(height: 40),
+                const SizedBox(height: 30),
                 Column(
                   children: [
                     SizedBox(
