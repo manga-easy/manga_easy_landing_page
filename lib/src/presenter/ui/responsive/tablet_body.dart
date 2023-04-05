@@ -1,4 +1,7 @@
 import 'package:flutter/material.dart';
+import 'package:manga_easy_landing_page/src/presenter/widgets/about_project.dart';
+import 'package:manga_easy_landing_page/src/presenter/widgets/download_app.dart';
+import 'package:manga_easy_landing_page/src/presenter/widgets/introduce_tablet.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/social_media.dart';
 
 class TabletBody extends StatelessWidget {
@@ -6,16 +9,55 @@ class TabletBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizeWidth = MediaQuery.of(context).size.width;
+    final sizeHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: ListView(
         children: [
-          Container(
-             alignment: Alignment.bottomLeft,
-            color: Colors.white,
-            child: Image.network(
-              'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-              
-            ),
+          Stack(
+            children: [
+              Container(
+                color: Colors.white,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    const IntroduceTablet(),
+                    DownloadApp(
+                      alignment: Alignment.topRight,
+                      crossAlign: CrossAxisAlignment.end,
+                      textAlign: TextAlign.right,
+                      padding:
+                          const EdgeInsets.only(right: 30, top: 70, bottom: 140),
+                      width: sizeWidth * 0.60,
+                    ),
+                    AboutProject(
+                      padding:
+                          const EdgeInsets.only(left: 30, top: 140, bottom: 100),
+                      width: sizeWidth * 0.5,
+                    ),
+                  ],
+                ),
+              ),
+              Positioned(
+                top: 740,
+                child: Image.network(
+                  'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
+                  height: 500,
+                ),
+              ),
+              Padding(
+                padding: const EdgeInsets.only(
+                  top: 1150,
+                ),
+                child: Align(
+                  alignment: Alignment.bottomRight,
+                  child: Image.network(
+                    'https://media.discordapp.net/attachments/1071892919633576117/1092987662366941315/fotinha_cropped.png?width=504&height=650',
+                    height: 400,
+                  ),
+                ),
+              ),
+            ],
           ),
           Row(
             children: const [

@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:manga_easy_landing_page/src/presenter/ui/desktop/about_project_desktop.dart';
-import 'package:manga_easy_landing_page/src/presenter/ui/desktop/download_app_desktop.dart';
-import 'package:manga_easy_landing_page/src/presenter/ui/desktop/introduce_desktop.dart';
+import 'package:manga_easy_landing_page/src/presenter/widgets/about_project.dart';
+import 'package:manga_easy_landing_page/src/presenter/widgets/download_app.dart';
+import 'package:manga_easy_landing_page/src/presenter/widgets/introduce_desktop.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/social_media.dart';
 
 class DesktopBody extends StatelessWidget {
@@ -9,6 +9,7 @@ class DesktopBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    double sizeWidth = MediaQuery.of(context).size.width;
     return Scaffold(
       body: ListView(
         children: [
@@ -17,10 +18,21 @@ class DesktopBody extends StatelessWidget {
               Container(
                 color: Colors.white,
                 child: Column(
-                  children: const [
-                    IntroduceDesktop(),
-                    DownloadAppDesktop(),
-                    AboutProjectDesktop(),
+                  children: [
+                    const IntroduceDesktop(),
+                    DownloadApp(
+                      alignment: Alignment.topRight,
+                      crossAlign: CrossAxisAlignment.end,
+                      textAlign: TextAlign.right,
+                      padding: const EdgeInsets.only(
+                          right: 60, top: 100, bottom: 120),
+                      width: sizeWidth * 0.50,
+                    ),
+                    AboutProject(
+                      padding: const EdgeInsets.only(
+                          left: 65, top: 200, bottom: 125),
+                      width: sizeWidth * 0.40,
+                    ),
                   ],
                 ),
               ),
@@ -31,11 +43,13 @@ class DesktopBody extends StatelessWidget {
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(top: 1175),
+                padding: const EdgeInsets.only(top: 1125, right: 50),
                 child: Align(
                   alignment: Alignment.bottomRight,
                   child: Image.network(
-                      'https://media.discordapp.net/attachments/1071892919633576117/1091899844429349004/image.png?width=535&height=650'),
+                    'https://media.discordapp.net/attachments/1071892919633576117/1092987662366941315/fotinha_cropped.png?width=504&height=650',
+                    height: 500,
+                  ),
                 ),
               ),
             ],

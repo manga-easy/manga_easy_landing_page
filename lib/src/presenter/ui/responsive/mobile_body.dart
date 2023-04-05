@@ -1,5 +1,7 @@
 import 'package:flutter/material.dart';
-import 'package:manga_easy_landing_page/src/presenter/ui/mobile/introduce_mobile.dart';
+import 'package:manga_easy_landing_page/src/presenter/widgets/introduce_mobile.dart';
+import 'package:manga_easy_landing_page/src/presenter/widgets/about_project.dart';
+import 'package:manga_easy_landing_page/src/presenter/widgets/download_app.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/social_media.dart';
 
 class MobileBody extends StatelessWidget {
@@ -7,6 +9,8 @@ class MobileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
+    final sizeWidth = MediaQuery.of(context).size.width;
+    final sizeHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: ListView(
         children: [
@@ -15,16 +19,36 @@ class MobileBody extends StatelessWidget {
               Container(
                 color: Colors.white,
                 child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
-                    IntroduceMobile(),
+                    const IntroduceMobile(),
+                    DownloadApp(
+                      padding:
+                          const EdgeInsets.only(left: 30, top: 70, bottom: 20),
+                      width: sizeWidth * 0.45,
+                    ),
+                    Image.network(
+                      'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
+                    ),
+                    AboutProject(
+                      padding:
+                          const EdgeInsets.only(left: 30, top: 70, bottom: 70),
+                      width: sizeWidth * 0.8,
+                    ),
                   ],
                 ),
               ),
+              Padding(
+                padding: const EdgeInsets.only(top: 300),
+                child: Align(
+                  alignment: Alignment.topRight,
+                  child: Image.network(
+                    'https://media.discordapp.net/attachments/1071892919633576117/1092970375589154837/image_cropped.png?width=304&height=650',
+                    height: sizeHeight * 0.5,
+                  ),
+                ),
+              ),
             ],
-          ),
-          Image.network(
-            'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-            width: MediaQuery.of(context).size.width * 0.8,
           ),
           const Expanded(
             child: SocialMedia(
