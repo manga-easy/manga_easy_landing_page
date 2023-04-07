@@ -10,11 +10,15 @@ class HomePage extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    return const ResponsiveLayout(
-      mobileBody: MobileBody(),
-      smallTablet: LargeMobileBody(),
-      tabletBody: TabletBody(),
-      desktopBody: DesktopBody(),
+    return Padding(
+      padding: EdgeInsets.symmetric(
+          horizontal: MediaQuery.of(context).size.width * 0.1),
+      child: const ResponsiveLayout(
+        mobileBody: MobileBody(),
+        smallTablet: LargeMobileBody(),
+        tabletBody: TabletBody(),
+        desktopBody: DesktopBody(),
+      ),
     );
   }
 }
