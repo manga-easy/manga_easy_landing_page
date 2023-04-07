@@ -10,7 +10,7 @@ class TabletBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = MediaQuery.of(context).size.width;
-    final sizeHeight = MediaQuery.of(context).size.height;
+    // final sizeHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: ListView(
         children: [
@@ -26,13 +26,13 @@ class TabletBody extends StatelessWidget {
                       alignment: Alignment.topRight,
                       crossAlign: CrossAxisAlignment.end,
                       textAlign: TextAlign.right,
-                      padding:
-                          const EdgeInsets.only(right: 30, top: 70, bottom: 140),
-                      width: sizeWidth * 0.60,
+                      padding: const EdgeInsets.only(
+                          right: 30, top: 70, bottom: 140),
+                      width: sizeWidth * 0.6,
                     ),
                     AboutProject(
-                      padding:
-                          const EdgeInsets.only(left: 30, top: 140, bottom: 100),
+                      padding: const EdgeInsets.only(
+                          left: 30, top: 140, bottom: 100),
                       width: sizeWidth * 0.5,
                     ),
                   ],
