@@ -10,7 +10,6 @@ class TabletBody extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     final sizeWidth = MediaQuery.of(context).size.width;
-    final sizeHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       body: ListView(
         children: [
@@ -39,7 +38,7 @@ class TabletBody extends StatelessWidget {
                 ),
               ),
               Positioned(
-                top: 740,
+                top: 650,
                 child: Image.network(
                   'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
                   height: 500,
@@ -47,7 +46,7 @@ class TabletBody extends StatelessWidget {
               ),
               Padding(
                 padding: const EdgeInsets.only(
-                  top: 1150,
+                  top: 1100,
                 ),
                 child: Align(
                   alignment: Alignment.bottomRight,
