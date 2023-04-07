@@ -57,7 +57,6 @@ class DesktopBody extends StatelessWidget {
           Row(
             children: const [
               Expanded(
-                flex: 1,
                 child: SocialMedia(
                   color: Color.fromARGB(149, 0, 0, 0),
                   imageBackgroound:
@@ -70,20 +69,18 @@ class DesktopBody extends StatelessWidget {
                 ),
               ),
               Expanded(
-                flex: 1,
                 child: SocialMedia(
                   color: Color.fromARGB(148, 52, 82, 255),
                   imageBackgroound:
                       'https://media.discordapp.net/attachments/1071892919633576117/1089659384063344680/image.png?width=1259&height=426',
                   logoSocialMedia:
-                      'https://logos-download.com/wp-content/uploads/2016/09/GitHub_logo.png',
+                      'https://logodownload.org/wp-content/uploads/2017/11/discord-logo-2-1.png',
                   text: 'Visite a comunidade\ndo aplicativo',
                   textButton: 'Visitar Comunidade',
                   link: 'https://discord.gg/ssp8Cr4a7u',
                 ),
               ),
               Expanded(
-                flex: 1,
                 child: SocialMedia(
                   color: Color.fromARGB(147, 250, 57, 36),
                   imageBackgroound:
