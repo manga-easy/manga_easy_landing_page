@@ -41,12 +41,15 @@ class IntroduceDesktop extends StatelessWidget {
                 ],
               ),
             ),
-            Container(
-              height: 750,
-              width: MediaQuery.of(context).size.width * 0.5,
-              color: Colors.orange,
-              child: Image.network(
-                  'https://media.discordapp.net/attachments/1071892919633576117/1092970375589154837/image_cropped.png?width=304&height=650'),
+            Align(
+              alignment: Alignment.centerRight,
+              child: Container(
+                height: 750,
+                width: 800,
+                color: Colors.orange,
+                child: Image.network(
+                    'https://media.discordapp.net/attachments/1071892919633576117/1092970375589154837/image_cropped.png?width=304&height=650'),
+              ),
             ),
           ],
         ),

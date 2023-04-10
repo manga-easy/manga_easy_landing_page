@@ -12,31 +12,29 @@ class LargeMobileBody extends StatelessWidget {
     final sizeWidth = MediaQuery.of(context).size.width;
     final sizeHeight = MediaQuery.of(context).size.height;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
         children: [
           Stack(
             children: [
-              Container(
-                color: Colors.white,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const IntroduceMobile(),
-                    DownloadApp(
-                      padding:
-                          const EdgeInsets.only(left: 30, top: 70, bottom: 20),
-                      width: sizeWidth * 0.50,
-                    ),
-                    Image.network(
-                      'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-                    ),
-                    AboutProject(
-                      padding:
-                          const EdgeInsets.only(left: 30, top: 70, bottom: 70),
-                      width: sizeWidth * 0.48,
-                    ),
-                  ],
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const IntroduceMobile(),
+                  DownloadApp(
+                    padding:
+                        const EdgeInsets.only(left: 30, top: 70, bottom: 20),
+                    width: sizeWidth * 0.50,
+                  ),
+                  Image.network(
+                    'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
+                  ),
+                  AboutProject(
+                    padding:
+                        const EdgeInsets.only(left: 30, top: 70, bottom: 70),
+                    width: sizeWidth * 0.48,
+                  ),
+                ],
               ),
               Padding(
                 padding: const EdgeInsets.only(

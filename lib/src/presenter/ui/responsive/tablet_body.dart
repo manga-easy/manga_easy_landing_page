@@ -11,31 +11,29 @@ class TabletBody extends StatelessWidget {
   Widget build(BuildContext context) {
     final sizeWidth = MediaQuery.of(context).size.width;
     return Scaffold(
+      backgroundColor: Colors.white,
       body: ListView(
         children: [
           Stack(
             children: [
-              Container(
-                color: Colors.white,
-                child: Column(
-                  crossAxisAlignment: CrossAxisAlignment.start,
-                  children: [
-                    const IntroduceTablet(),
-                    DownloadApp(
-                      alignment: Alignment.topRight,
-                      crossAlign: CrossAxisAlignment.end,
-                      textAlign: TextAlign.right,
-                      padding:
-                          const EdgeInsets.only(right: 30, top: 70, bottom: 140),
-                      width: sizeWidth * 0.60,
-                    ),
-                    AboutProject(
-                      padding:
-                          const EdgeInsets.only(left: 30, top: 140, bottom: 100),
-                      width: sizeWidth * 0.5,
-                    ),
-                  ],
-                ),
+              Column(
+                crossAxisAlignment: CrossAxisAlignment.start,
+                children: [
+                  const IntroduceTablet(),
+                  DownloadApp(
+                    alignment: Alignment.topRight,
+                    crossAlign: CrossAxisAlignment.end,
+                    textAlign: TextAlign.right,
+                    padding:
+                        const EdgeInsets.only(right: 30, top: 70, bottom: 140),
+                    width: sizeWidth * 0.60,
+                  ),
+                  AboutProject(
+                    padding:
+                        const EdgeInsets.only(left: 30, top: 140, bottom: 100),
+                    width: sizeWidth * 0.5,
+                  ),
+                ],
               ),
               Positioned(
                 top: 650,

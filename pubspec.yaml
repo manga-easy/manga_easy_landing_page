@@ -10,6 +10,10 @@ dependencies:
   flutter:
     sdk: flutter
   url_launcher: ^6.1.10
+  client_driver:
+    git:
+      url: https://github.com/manga-easy/manga_easy_client_driver.git
+      ref: v1.0.0
   
 
 dev_dependencies:
