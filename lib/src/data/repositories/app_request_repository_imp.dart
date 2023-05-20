@@ -10,9 +10,9 @@ class AppRequestRepositoryImp implements AppRequestRepository {
   AppRequestRepositoryImp(this.resquestData, this._requestMapper);
 
   @override
-  Future<List<AppRequestEntity>> get(String param) async {
+  Future<AppRequestEntity> get(String param) async {
     final request = await resquestData.get(param);
-    final result = request.map((e) => _requestMapper.toEntity(e)).toList();
+    final result = request.map((e) => _requestMapper.toEntity(e)).first;
     return result;
   }
 }

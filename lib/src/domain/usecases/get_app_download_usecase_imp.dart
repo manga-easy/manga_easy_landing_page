@@ -8,7 +8,7 @@ class GetAppDownloadUsecaseImp implements GetAppDownloadUsecase {
   GetAppDownloadUsecaseImp(this.requestRepository);
 
   @override
-  Future<List<AppRequestEntity>> getDownload() async {
+  Future<AppRequestEntity> getDownload() async {
     return await requestRepository.get("linkDownloadApp");
   }
 }

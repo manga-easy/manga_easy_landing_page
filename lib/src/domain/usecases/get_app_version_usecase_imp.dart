@@ -8,7 +8,7 @@ class GetAppVersionUsecaseImp implements GetAppVersionUsecase {
   GetAppVersionUsecaseImp(this.requestRepository);
 
   @override
-  Future<List<AppRequestEntity>> getVersion() async {
+  Future<AppRequestEntity> getVersion() async {
     return await requestRepository.get("currentVersionApp");
   }
 }
