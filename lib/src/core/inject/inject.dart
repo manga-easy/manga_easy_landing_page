@@ -1,3 +1,4 @@
+import 'package:client_driver/client_driver.dart';
 import 'package:get_it/get_it.dart';
 import 'package:manga_easy_landing_page/src/data/datasources/app_request_datasource.dart';
 import 'package:manga_easy_landing_page/src/data/datasources/app_request_datasource_imp.dart';
@@ -14,6 +15,7 @@ class Inject {
   GetIt getIt = GetIt.instance;
 
   void registerDependencies() {
+    getIt.registerFactory<ClientRequest>(() => ClientHttp());
     //mappers
     getIt.registerFactory(() => AppRequestMapper());
     //datasource
