@@ -31,12 +31,12 @@ class DesktopBody extends StatelessWidget {
                   padding: const EdgeInsets.only(
                     right: 60,
                     top: 80,
-                    bottom: 50,
+                    bottom: 40,
                   ),
                 ),
                 const AboutProject(
                   padding:
-                      EdgeInsets.only(left: 60, top: 50, bottom: 80, right: 60),
+                      EdgeInsets.only(left: 60, top: 40, bottom: 80, right: 60),
                 ),
               ],
             ),

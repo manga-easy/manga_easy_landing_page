@@ -11,7 +11,6 @@ class LargeMobileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sizeWidth = MediaQuery.of(context).size.width;
     final sizeHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -22,7 +21,9 @@ class LargeMobileBody extends StatelessWidget {
               Column(
                 crossAxisAlignment: CrossAxisAlignment.start,
                 children: [
-                  const IntroduceMobile(),
+                  const IntroduceMobile(
+                    padding: EdgeInsets.fromLTRB(30, 70, 220, 70),
+                  ),
                   DownloadApp(
                     ct: ct,
                     padding:
@@ -33,11 +34,10 @@ class LargeMobileBody extends StatelessWidget {
                         .headlineSmall!
                         .copyWith(
                             color: Colors.black, fontWeight: FontWeight.bold),
-                  textAlign: TextAlign.end,
+                    textAlign: TextAlign.end,
                   ),
-
                   const AboutProject(
-                    padding: EdgeInsets.only(left: 30, top: 50, bottom: 70),
+                    padding: EdgeInsets.only(left: 30, top: 50, bottom: 70, right: 30),
                     isMobile: true,
                   ),
                 ],

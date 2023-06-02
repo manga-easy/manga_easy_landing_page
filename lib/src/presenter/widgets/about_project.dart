@@ -9,18 +9,18 @@ class AboutProject extends StatelessWidget {
       {super.key,
       required this.padding,
       this.imageHeight,
-       this.isMobile = false});
+      this.isMobile = false});
 
   @override
   Widget build(BuildContext context) {
     return Padding(
       padding: padding,
       child: Row(
+  mainAxisAlignment: MainAxisAlignment.spaceBetween,      
         children: [
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
-             
               children: [
                 Text(
                   'Sobre o Projeto',
@@ -36,13 +36,16 @@ class AboutProject extends StatelessWidget {
               ],
             ),
           ),
-          const Spacer(),
+          
           isMobile
               ? const SizedBox.shrink()
-              : Image.network(
-                  'https://media.discordapp.net/attachments/1071892919633576117/1092987662366941315/fotinha_cropped.png?width=504&height=650',
-                  height: imageHeight ?? 400,
-                ),
+              : Padding(
+                padding: const EdgeInsets.only(left: 80),
+                child: Image.network(
+                    'https://media.discordapp.net/attachments/1071892919633576117/1092987662366941315/fotinha_cropped.png?width=504&height=650',
+                    height: imageHeight ?? 400,
+                  ),
+              ),
         ],
       ),
     );

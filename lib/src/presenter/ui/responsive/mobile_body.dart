@@ -11,7 +11,6 @@ class MobileBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    final sizeWidth = MediaQuery.of(context).size.width;
     final sizeHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
@@ -39,7 +38,7 @@ class MobileBody extends StatelessWidget {
                     height: 500,
                   ),
                   const AboutProject(
-                    padding: EdgeInsets.only(left: 30, top: 70, bottom: 70),
+                    padding: EdgeInsets.only(left: 30, top: 70, bottom: 70, right: 30),
                     isMobile: true,
                   ),
                 ],
