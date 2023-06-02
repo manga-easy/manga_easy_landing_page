@@ -1,27 +1,28 @@
 import 'package:flutter/material.dart';
 
 class IntroduceMobile extends StatelessWidget {
-  const IntroduceMobile({super.key});
+  final EdgeInsetsGeometry? padding;
+  const IntroduceMobile({super.key, this.padding});
 
   @override
   Widget build(BuildContext context) {
     return Container(
       color: Colors.orange,
       width: double.infinity,
-      padding: const EdgeInsets.fromLTRB(30, 70, 0, 70),
+      padding: padding ?? const EdgeInsets.fromLTRB(30, 50, 30, 50),
       child: Column(
         crossAxisAlignment: CrossAxisAlignment.start,
         children: [
           Text(
-            'Seja bem vindo a pagina do manga easy',
+            'Desvende um mundo de aventuras e emoções através do Mangá Easy!!!',
             style: Theme.of(context)
                 .textTheme
-                .titleLarge!
-                .copyWith(color: Colors.white, fontWeight: FontWeight.normal),
+                .titleMedium!
+                .copyWith(color: Colors.white),
           ),
           const SizedBox(height: 20),
           Text(
-            'Boas vindas !!!',
+            'Estamos a sua espera!!!',
             style: Theme.of(context)
                 .textTheme
                 .headlineMedium!
@@ -29,30 +30,15 @@ class IntroduceMobile extends StatelessWidget {
           ),
           const SizedBox(height: 20),
           Text(
-            'Aqui você sempre encontrará\na versão mais recente do Mangá Easy.',
+            'O Manga Easy é o ponto de partida para mergulhar em histórias cativantes, personagens fascinantes e ilustrações deslumbrantes. Baixe o aplicativo e deixe-se envolver pela magia do mangá. Entre nessa jornada épica conosco!',
             style: Theme.of(context)
                 .textTheme
-                .titleLarge!
-                .copyWith(color: Colors.white, fontWeight: FontWeight.normal),
+                .titleMedium!
+                .copyWith(color: Colors.white),
           ),
           const SizedBox(height: 20),
-          SizedBox(
-            height: 40,
-            width: 175,
-            child: ElevatedButton(
-              style: ElevatedButton.styleFrom(
-                backgroundColor: Colors.white,
-              ),
-              onPressed: () {},
-              child: const Text(
-                'Baixar agora',
-                style: TextStyle(color: Colors.black),
-              ),
-            ),
-          ),
-          const SizedBox(height: 20),
-          Row(
-            children: const [
+          const Row(
+            children: [
               Icon(
                 Icons.arrow_downward,
                 color: Colors.white,

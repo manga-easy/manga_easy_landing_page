@@ -14,33 +14,37 @@ class IntroduceDesktop extends StatelessWidget {
           children: [
             Padding(
               padding: const EdgeInsets.only(left: 65),
-              child: Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Text(
-                    'Boas vindas !!!',
-                    style: Theme.of(context).textTheme.headlineLarge!.copyWith(
-                        fontWeight: FontWeight.bold, color: Colors.black),
-                  ),
-                  Text(
-                    'Aqui você sempre encontrará\na versão mais recente do Mangá Easy.',
-                    style: Theme.of(context).textTheme.titleLarge,
-                  ),
-                  const SizedBox(height: 20),
-                  SizedBox(
-                    height: 40,
-                    width: 125,
-                    child: ElevatedButton(
-                      style: ElevatedButton.styleFrom(
-                        backgroundColor: Colors.black,
-                      ),
-                      onPressed: () {},
-                      child: const Text(
-                        'Baixar agora',
-                      ),
+              child: SizedBox(
+                width: size.width * 0.27,
+                child: Column(
+                  crossAxisAlignment: CrossAxisAlignment.start,
+                  children: [
+                    Text(
+                      'Desvende um mundo de aventuras e emoções através do Mangá Easy!!!',
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge!
+                          .copyWith(color: Colors.black),
                     ),
-                  ),
-                ],
+                    const SizedBox(height: 20),
+                    Text(
+                      'Estamos a sua espera!!!',
+                      style:
+                          Theme.of(context).textTheme.headlineLarge!.copyWith(
+                                fontWeight: FontWeight.bold,
+                                color: Colors.black,
+                              ),
+                    ),
+                    const SizedBox(height: 20),
+                    Text(
+                      'O Manga Easy é o ponto de partida para mergulhar em histórias cativantes, personagens fascinantes e ilustrações deslumbrantes. Baixe o aplicativo e deixe-se envolver pela magia do mangá. Entre nessa jornada épica conosco!',
+                      style: Theme.of(context)
+                          .textTheme
+                          .titleLarge!
+                          .copyWith(color: Colors.black),
+                    ),
+                  ],
+                ),
               ),
             ),
             Align(
