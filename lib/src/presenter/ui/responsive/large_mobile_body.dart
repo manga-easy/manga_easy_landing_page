@@ -26,34 +26,24 @@ class LargeMobileBody extends StatelessWidget {
                   DownloadApp(
                     ct: ct,
                     padding:
-                        const EdgeInsets.only(left: 30, top: 70, bottom: 20),
-                    width: sizeWidth * 0.50,
+                        const EdgeInsets.only(top: 70, bottom: 20, right: 20),
+                    imageHeight: 350,
+                    textStyle: Theme.of(context)
+                        .textTheme
+                        .headlineSmall!
+                        .copyWith(
+                            color: Colors.black, fontWeight: FontWeight.bold),
+                  textAlign: TextAlign.end,
                   ),
-                  Image.network(
-                    'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-                    height: 500,
-                  ),
-                  AboutProject(
-                    padding:
-                        const EdgeInsets.only(left: 30, top: 70, bottom: 70),
-                    width: sizeWidth * 0.48,
+
+                  const AboutProject(
+                    padding: EdgeInsets.only(left: 30, top: 50, bottom: 70),
+                    isMobile: true,
                   ),
                 ],
               ),
               Padding(
-                padding:  EdgeInsets.only(
-                  top: sizeHeight * 1.7,
-                ),
-                child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: Image.network(
-                    'https://media.discordapp.net/attachments/1071892919633576117/1092987662366941315/fotinha_cropped.png?width=504&height=650',
-                    height: 325,
-                  ),
-                ),
-              ),
-              Padding(
-                padding: const EdgeInsets.only(top: 250),
+                padding: const EdgeInsets.only(top: 120),
                 child: Align(
                   alignment: Alignment.topRight,
                   child: Image.network(

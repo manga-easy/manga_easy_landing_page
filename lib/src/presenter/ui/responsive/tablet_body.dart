@@ -11,58 +11,29 @@ class TabletBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var sizeWidth = MediaQuery.of(context).size.width;
-    var sizeHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: ListView(
         children: [
-          Stack(
+          Column(
+            crossAxisAlignment: CrossAxisAlignment.start,
             children: [
-              Column(
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  const IntroduceTablet(),
-                  DownloadApp(
-                    ct: ct,
-                    alignment: Alignment.topRight,
-                    crossAlign: CrossAxisAlignment.end,
-                    textAlign: TextAlign.right,
-                    padding:
-                        const EdgeInsets.only(right: 30, top: 100, bottom: 120),
-                    width: sizeWidth * 0.30,
-                  ),
-                  AboutProject(
-                    padding:
-                        const EdgeInsets.only(left: 30, top: 100, bottom: 100),
-                    width: sizeWidth * 0.5,
-                  ),
-                ],
+              const IntroduceTablet(),
+              DownloadApp(
+                ct: ct,
+                alignment: Alignment.topRight,
+                crossAlign: CrossAxisAlignment.end,
+                textAlign: TextAlign.right,
+                padding: const EdgeInsets.only(right: 30, top: 60, bottom: 50),
               ),
-              Positioned(
-                top: sizeHeight * 0.7,
-                child: Image.network(
-                  'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-                  height: sizeHeight * 0.75,
-                ),
-              ),
-              Padding(
-                padding: EdgeInsets.only(
-                  top: sizeHeight * 1.4,
-                  right: 30,
-                ),
-                child: Align(
-                  alignment: Alignment.bottomRight,
-                  child: Image.network(
-                    'https://media.discordapp.net/attachments/1071892919633576117/1092987662366941315/fotinha_cropped.png?width=504&height=650',
-                    height: 400,
-                  ),
-                ),
+              AboutProject(
+                padding: const EdgeInsets.only(
+                    left: 30, top: 50, bottom: 60, right: 30),
               ),
             ],
           ),
-         const  Row(
-            children:  [
+          const Row(
+            children: [
               Expanded(
                 child: SocialMedia(
                   color: Color.fromARGB(149, 0, 0, 0),

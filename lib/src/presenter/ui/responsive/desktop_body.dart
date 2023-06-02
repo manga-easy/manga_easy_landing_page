@@ -15,55 +15,28 @@ class DesktopBody extends StatelessWidget {
 
   @override
   Widget build(BuildContext context) {
-    var sizeWidth = MediaQuery.of(context).size.width;
-    var sizeHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: Center(
         child: ListView(
           children: [
-            Stack(
+            Column(
               children: [
-                Column(
-                  children: [
-                    const IntroduceDesktop(),
-                    DownloadApp(
-                      ct: ct,
-                      alignment: Alignment.topRight,
-                      crossAlign: CrossAxisAlignment.end,
-                      textAlign: TextAlign.right,
-                      padding: const EdgeInsets.only(
-                        right: 60,
-                        top: 100,
-                        bottom: 120,
-                        
-                      ),
-
-                      width: sizeWidth * 0.50,
-                    ),
-                    AboutProject(
-                      padding: const EdgeInsets.only(
-                          left: 65, top: 100, bottom: 125),
-                      width: sizeWidth * 0.50,
-                    ),
-                  ],
-                ),
-                Positioned(
-                  top: sizeHeight * 0.95,
-                  child: Image.network(
-                    'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-                    height: 500,
+                const IntroduceDesktop(),
+                DownloadApp(
+                  ct: ct,
+                  alignment: Alignment.topRight,
+                  crossAlign: CrossAxisAlignment.end,
+                  textAlign: TextAlign.right,
+                  padding: const EdgeInsets.only(
+                    right: 60,
+                    top: 80,
+                    bottom: 50,
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsets.only(top: sizeHeight * 1.5, right: 50),
-                  child: Align(
-                    alignment: Alignment.bottomRight,
-                    child: Image.network(
-                      'https://media.discordapp.net/attachments/1071892919633576117/1092987662366941315/fotinha_cropped.png?width=504&height=650',
-                      height: 400,
-                    ),
-                  ),
+                const AboutProject(
+                  padding:
+                      EdgeInsets.only(left: 60, top: 50, bottom: 80, right: 60),
                 ),
               ],
             ),

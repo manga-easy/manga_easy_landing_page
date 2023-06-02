@@ -9,7 +9,10 @@ class DownloadApp extends StatelessWidget {
   final TextAlign? textAlign;
   final Alignment? alignment;
   final EdgeInsets padding;
-  final double? width;
+  final double? imageHeight;
+  final bool isMobile;
+  final TextStyle? textStyle;
+
   final LandingController ct;
 
   const DownloadApp(
@@ -18,78 +21,85 @@ class DownloadApp extends StatelessWidget {
       this.crossAlign,
       this.alignment,
       required this.padding,
-      this.width,
-      required this.ct});
+      required this.ct,
+      this.imageHeight,
+      this.isMobile = false,
+      this.textStyle});
 
   @override
   Widget build(BuildContext context) {
-    return Stack(
-      children: [
-        Align(
-          alignment: alignment ?? Alignment.topLeft,
-          child: Padding(
-            padding: padding,
+    return Padding(
+      padding: padding,
+      child: Row(
+        children: [
+          isMobile
+              ? const SizedBox.shrink()
+              : Image.network(
+                  'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
+                  height: imageHeight ?? 500,
+                ),
+          const SizedBox(width: 20),
+          Expanded(
             child: Column(
               crossAxisAlignment: crossAlign ?? CrossAxisAlignment.start,
               children: [
-                SizedBox(
-                  width: width,
-                  child: Text(
-                    'Aqui você pode baixar a versão mais recente do nosso aplicativo.',
-                    textAlign: textAlign ?? TextAlign.start,
-                    style: Theme.of(context).textTheme.headlineMedium!.copyWith(
-                        color: Colors.black, fontWeight: FontWeight.bold),
-                  ),
+                Text(
+                  'Aqui você pode baixar a versão mais recente do nosso aplicativo.',
+                  textAlign: textAlign ?? TextAlign.start,
+                  style: textStyle ??
+                      Theme.of(context).textTheme.headlineMedium!.copyWith(
+                          color: Colors.black, fontWeight: FontWeight.bold),
                 ),
                 const SizedBox(height: 30),
                 FutureBuilder(
-                    future: ct.getVersion(),
-                    builder: (context, snapshot) {
-                      if (snapshot.hasError) {
-                        return Text(
-                          '${snapshot.error} occurred',
-                          style: const TextStyle(fontSize: 18),
-                        );
-                      }
-                      print(snapshot.data);
+                  future: ct.getVersion(),
+                  builder: (context, snapshot) {
+                    if (snapshot.hasError) {
+                      return Text(
+                        '${snapshot.error} occurred',
+                        style: const TextStyle(fontSize: 18),
+                      );
+                    }
+                    print(snapshot.data);
 
-                      if (snapshot.hasData && !snapshot.data.isNull) {
-                        String data = snapshot.data!;
-                        return Column(
-                          children: [
-                            SizedBox(
-                              height: 50,
-                              width: 200,
-                              child: ElevatedButton(
-                                style: ElevatedButton.styleFrom(
-                                  backgroundColor:
-                                      const Color.fromRGBO(254, 61, 0, 1),
-                                ),
-                                onPressed: () async {
-                                  launchUrl(
-                                    Uri.parse(
-                                      await ct.getDownload(),
-                                    ),
-                                  );
-                                },
-                                child: const Text(
-                                  'Baixar agora',
-                                ),
+                    if (snapshot.hasData && !snapshot.data.isNull) {
+                      String data = snapshot.data!;
+                      return Column(
+                        children: [
+                          SizedBox(
+                            height: 50,
+                            width: 200,
+                            child: ElevatedButton(
+                              style: ElevatedButton.styleFrom(
+                                backgroundColor:
+                                    const Color.fromRGBO(254, 61, 0, 1),
+                              ),
+                              onPressed: () async {
+                                launchUrl(
+                                  Uri.parse(
+                                    await ct.getDownload(),
+                                  ),
+                                );
+                              },
+                              child: const Text(
+                                'Baixar agora',
                               ),
                             ),
-                            const SizedBox(height: 10),
-                            Text(data),
-                          ],
-                        );
-                      }
+                          ),
+                          const SizedBox(height: 10),
+                          Text(data),
+                        ],
+                      );
+                    }
 
-                      return const CircularProgressIndicator();
-                    }),
+                    return const CircularProgressIndicator();
+                  },
+                ),
               ],
             ),
           ),
-        ),
-      ],
+        ],
+      ),
     );
   }
 }

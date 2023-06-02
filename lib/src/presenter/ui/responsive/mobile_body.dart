@@ -25,17 +25,22 @@ class MobileBody extends StatelessWidget {
                   const IntroduceMobile(),
                   DownloadApp(
                     ct: ct,
-                    padding:
-                        const EdgeInsets.only(left: 30, top: 70, bottom: 20),
-                    width: sizeWidth * 0.45,
+                    padding: const EdgeInsets.only(
+                        left: 30, top: 70, bottom: 20, right: 200),
+                    isMobile: true,
+                    textStyle: Theme.of(context)
+                        .textTheme
+                        .headlineMedium!
+                        .copyWith(
+                            color: Colors.black, fontWeight: FontWeight.bold),
                   ),
                   Image.network(
                     'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
+                    height: 500,
                   ),
-                  AboutProject(
-                    padding:
-                        const EdgeInsets.only(left: 30, top: 70, bottom: 70),
-                    width: sizeWidth * 0.8,
+                  const AboutProject(
+                    padding: EdgeInsets.only(left: 30, top: 70, bottom: 70),
+                    isMobile: true,
                   ),
                 ],
               ),
