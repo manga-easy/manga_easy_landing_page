@@ -1,15 +1,18 @@
 import 'package:flutter/material.dart';
+import 'package:manga_easy_landing_page/src/presenter/controller/landing_controller.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/about_project.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/download_app.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/introduce_tablet.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/social_media.dart';
 
 class TabletBody extends StatelessWidget {
-  const TabletBody({super.key});
+  final LandingController ct;
+  const TabletBody({super.key, required this.ct});
 
   @override
   Widget build(BuildContext context) {
-    final sizeWidth = MediaQuery.of(context).size.width;
+    var sizeWidth = MediaQuery.of(context).size.width;
+    var sizeHeight = MediaQuery.of(context).size.height;
     return Scaffold(
       backgroundColor: Colors.white,
       body: ListView(
@@ -21,30 +24,32 @@ class TabletBody extends StatelessWidget {
                 children: [
                   const IntroduceTablet(),
                   DownloadApp(
+                    ct: ct,
                     alignment: Alignment.topRight,
                     crossAlign: CrossAxisAlignment.end,
                     textAlign: TextAlign.right,
                     padding:
-                        const EdgeInsets.only(right: 30, top: 70, bottom: 140),
-                    width: sizeWidth * 0.60,
+                        const EdgeInsets.only(right: 30, top: 100, bottom: 120),
+                    width: sizeWidth * 0.30,
                   ),
                   AboutProject(
                     padding:
-                        const EdgeInsets.only(left: 30, top: 140, bottom: 100),
+                        const EdgeInsets.only(left: 30, top: 100, bottom: 100),
                     width: sizeWidth * 0.5,
                   ),
                 ],
               ),
               Positioned(
-                top: 650,
+                top: sizeHeight * 0.7,
                 child: Image.network(
                   'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
-                  height: 500,
+                  height: sizeHeight * 0.75,
                 ),
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                  top: 1100,
+                padding: EdgeInsets.only(
+                  top: sizeHeight * 1.4,
+                  right: 30,
                 ),
                 child: Align(
                   alignment: Alignment.bottomRight,
@@ -56,8 +61,8 @@ class TabletBody extends StatelessWidget {
               ),
             ],
           ),
-          Row(
-            children: const [
+         const  Row(
+            children:  [
               Expanded(
                 child: SocialMedia(
                   color: Color.fromARGB(149, 0, 0, 0),

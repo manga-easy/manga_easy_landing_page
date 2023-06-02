@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:manga_easy_landing_page/src/presenter/controller/landing_controller.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/introduce_mobile.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/about_project.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/download_app.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/social_media.dart';
 
 class MobileBody extends StatelessWidget {
-  const MobileBody({super.key});
+  final LandingController ct;
+  const MobileBody({super.key, required this.ct});
 
   @override
   Widget build(BuildContext context) {
@@ -22,6 +24,7 @@ class MobileBody extends StatelessWidget {
                 children: [
                   const IntroduceMobile(),
                   DownloadApp(
+                    ct: ct,
                     padding:
                         const EdgeInsets.only(left: 30, top: 70, bottom: 20),
                     width: sizeWidth * 0.45,

@@ -1,4 +1,8 @@
+import 'dart:js_interop';
+
 import 'package:flutter/material.dart';
+import 'package:manga_easy_landing_page/src/presenter/controller/landing_controller.dart';
+import 'package:url_launcher/url_launcher.dart';
 
 class DownloadApp extends StatelessWidget {
   final CrossAxisAlignment? crossAlign;
@@ -6,6 +10,7 @@ class DownloadApp extends StatelessWidget {
   final Alignment? alignment;
   final EdgeInsets padding;
   final double? width;
+  final LandingController ct;
 
   const DownloadApp(
       {super.key,
@@ -13,7 +18,8 @@ class DownloadApp extends StatelessWidget {
       this.crossAlign,
       this.alignment,
       required this.padding,
-      this.width});
+      this.width,
+      required this.ct});
 
   @override
   Widget build(BuildContext context) {
@@ -36,25 +42,49 @@ class DownloadApp extends StatelessWidget {
                   ),
                 ),
                 const SizedBox(height: 30),
-                Column(
-                  children: [
-                    SizedBox(
-                      height: 50,
-                      width: 200,
-                      child: ElevatedButton(
-                        style: ElevatedButton.styleFrom(
-                          backgroundColor: const Color.fromRGBO(254, 61, 0, 1),
-                        ),
-                        onPressed: () {},
-                        child: const Text(
-                          'Baixar agora',
-                        ),
-                      ),
-                    ),
-                    const SizedBox(height: 10),
-                    const Text('Versão 0.10.0')
-                  ],
-                ),
+                FutureBuilder(
+                    future: ct.getVersion(),
+                    builder: (context, snapshot) {
+                      if (snapshot.hasError) {
+                        return Text(
+                          '${snapshot.error} occurred',
+                          style: const TextStyle(fontSize: 18),
+                        );
+                      }
+                      print(snapshot.data);
+
+                      if (snapshot.hasData && !snapshot.data.isNull) {
+                        String data = snapshot.data!;
+                        return Column(
+                          children: [
+                            SizedBox(
+                              height: 50,
+                              width: 200,
+                              child: ElevatedButton(
+                                style: ElevatedButton.styleFrom(
+                                  backgroundColor:
+                                      const Color.fromRGBO(254, 61, 0, 1),
+                                ),
+                                onPressed: () async {
+                                  launchUrl(
+                                    Uri.parse(
+                                      await ct.getDownload(),
+                                    ),
+                                  );
+                                },
+                                child: const Text(
+                                  'Baixar agora',
+                                ),
+                              ),
+                            ),
+                            const SizedBox(height: 10),
+                            Text(data),
+                          ],
+                        );
+                      }
+
+                      return const CircularProgressIndicator();
+                    }),
               ],
             ),
           ),

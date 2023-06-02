@@ -1,11 +1,13 @@
 import 'package:flutter/material.dart';
+import 'package:manga_easy_landing_page/src/presenter/controller/landing_controller.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/about_project.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/download_app.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/introduce_mobile.dart';
 import 'package:manga_easy_landing_page/src/presenter/widgets/social_media.dart';
 
 class LargeMobileBody extends StatelessWidget {
-  const LargeMobileBody({super.key});
+  final LandingController ct;
+  const LargeMobileBody({super.key, required this.ct});
 
   @override
   Widget build(BuildContext context) {
@@ -22,12 +24,14 @@ class LargeMobileBody extends StatelessWidget {
                 children: [
                   const IntroduceMobile(),
                   DownloadApp(
+                    ct: ct,
                     padding:
                         const EdgeInsets.only(left: 30, top: 70, bottom: 20),
                     width: sizeWidth * 0.50,
                   ),
                   Image.network(
                     'https://media.discordapp.net/attachments/1071892919633576117/1089615453946658916/image.png?width=583&height=650',
+                    height: 500,
                   ),
                   AboutProject(
                     padding:
@@ -37,8 +41,8 @@ class LargeMobileBody extends StatelessWidget {
                 ],
               ),
               Padding(
-                padding: const EdgeInsets.only(
-                  top: 1350,
+                padding:  EdgeInsets.only(
+                  top: sizeHeight * 1.7,
                 ),
                 child: Align(
                   alignment: Alignment.bottomRight,
