@@ -32,6 +32,7 @@ class SocialMedia extends StatelessWidget {
       ),
       child: Container(
         color: color,
+        height: sizeHeight * 0.25,
         child: Column(
           children: [
             const SizedBox(height: 26),

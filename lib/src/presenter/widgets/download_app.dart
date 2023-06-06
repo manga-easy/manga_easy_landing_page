@@ -60,7 +60,6 @@ class DownloadApp extends StatelessWidget {
                         style: const TextStyle(fontSize: 18),
                       );
                     }
-                    print(snapshot.data);
 
                     if (snapshot.hasData && !snapshot.data.isNull) {
                       String data = snapshot.data!;

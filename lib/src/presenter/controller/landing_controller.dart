@@ -10,7 +10,6 @@ class LandingController {
 
   Future<String> getVersion() async {
     var getAppVersion = await _getAppVersion.getVersion();
-    print(getAppVersion.value);
     return getAppVersion.value;
   }
 

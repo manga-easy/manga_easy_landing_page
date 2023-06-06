@@ -33,7 +33,6 @@ class IntroduceTablet extends StatelessWidget {
                       color: Colors.white, fontWeight: FontWeight.normal),
                 ),
                 const SizedBox(height: 20),
-                
                 const Row(
                   children: [
                     Icon(
@@ -61,7 +60,7 @@ class IntroduceTablet extends StatelessWidget {
               ],
             ),
           ),
-          SizedBox(width: 70),
+          const SizedBox(width: 70),
           Image.network(
               'https://media.discordapp.net/attachments/1071892919633576117/1092970375589154837/image_cropped.png?width=304&height=650',
               height: 400),

@@ -17,7 +17,6 @@ void main() {
   test('Conferindo se o requestVersion ta retornando o value', () async {
     GetAppVersionUsecase requestVersionUseCase = GetIt.I();
     AppRequestEntity getAppVersion = await requestVersionUseCase.getVersion();
-    print(getAppVersion.value);
     expectLater(getAppVersion.value, isNotEmpty);
   });
 }

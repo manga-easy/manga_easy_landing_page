@@ -18,7 +18,6 @@ void main() {
     GetAppDownloadUsecase requestDownloadUseCase = GetIt.I();
     AppRequestEntity getAppDownload =
         await requestDownloadUseCase.getDownload();
-    print(getAppDownload.value);
     expectLater(getAppDownload.value, isNotEmpty);
   });
 }
