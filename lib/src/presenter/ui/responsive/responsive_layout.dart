@@ -1,3 +1,5 @@
+import 'dart:developer';
+
 import 'package:flutter/material.dart';
 
 class ResponsiveLayout extends StatelessWidget {
@@ -19,12 +21,16 @@ class ResponsiveLayout extends StatelessWidget {
     return LayoutBuilder(
       builder: (context, constraints) {
         if (constraints.maxWidth < 550) {
+          log('mobileBody');
           return mobileBody;
         } else if (constraints.maxWidth < 850) {
+          log('smallTablet');
           return smallTablet;
         } else if (constraints.maxWidth < 1100) {
+          log('tabletBody');
           return tabletBody;
         } else {
+          log('desktopBody');
           return desktopBody;
         }
       },

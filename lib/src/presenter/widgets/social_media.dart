@@ -1,22 +1,19 @@
 import 'package:flutter/material.dart';
+import 'package:manga_easy_landing_page/src/core/image_link_enum.dart';
 import 'package:url_launcher/url_launcher.dart';
 
 class SocialMedia extends StatelessWidget {
-  final String imageBackgroound;
-  final String logoSocialMedia;
   final String text;
   final String textButton;
-  final String link;
+  final ImageLink imageLink;
   final Color color;
 
   const SocialMedia({
     super.key,
-    required this.imageBackgroound,
-    required this.logoSocialMedia,
     required this.text,
     required this.textButton,
-    required this.link,
     required this.color,
+    required this.imageLink,
   });
 
   @override
@@ -26,7 +23,7 @@ class SocialMedia extends StatelessWidget {
     return Container(
       decoration: BoxDecoration(
         image: DecorationImage(
-          image: NetworkImage(imageBackgroound),
+          image: NetworkImage(imageLink.linkBackground),
           fit: BoxFit.cover,
         ),
       ),
@@ -37,7 +34,7 @@ class SocialMedia extends StatelessWidget {
           children: [
             const SizedBox(height: 26),
             Image.network(
-              logoSocialMedia,
+              imageLink.iconeLink,
               color: Colors.white,
               height: sizeHeight * 0.08,
             ),
@@ -52,7 +49,7 @@ class SocialMedia extends StatelessWidget {
             ),
             const SizedBox(height: 20),
             OutlinedButton(
-              onPressed: () => launchUrl(Uri.parse(link)),
+              onPressed: () => launchUrl(Uri.parse(imageLink.redirectLink)),
               style: OutlinedButton.styleFrom(
                 side: const BorderSide(
                   width: 1,
