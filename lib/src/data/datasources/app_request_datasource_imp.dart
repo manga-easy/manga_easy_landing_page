@@ -7,7 +7,7 @@ import 'package:manga_easy_landing_page/src/data/mappers/app_request_mapper.dart
 class AppRequestDataSourceImp implements AppRequestDataSource {
   final ClientRequest _clientDriver;
   final String path = 'toggle';
-  final String url = 'http://micro-config.lucas-cm.com.br';
+  final String url = 'https://micro-config.lucas-cm.com.br';
   final String version = 'v1';
   final String params = 'name';
   final AppRequestMapper _mapper;
