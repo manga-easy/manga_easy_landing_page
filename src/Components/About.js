@@ -17,13 +17,12 @@ const About = () => {
           O Manga Easy é muito bom
         </h1>
         <p className="primary-text">
-          Lorem ipsum dolor sit amet consectetur. Non tincidunt magna non et
-          elit. Dolor turpis molestie dui magnis facilisis at fringilla quam.
+        O Manga Easy é uma plataforma online dedicada a compartilhar mangás emocionantes e diversos. Com uma biblioteca virtual em constante expansão, oferecemos aos amantes de mangá a oportunidade de explorar uma variedade de gêneros e histórias envolventes.
         </p>
         <p className="primary-text">
-          Non tincidunt magna non et elit. Dolor turpis molestie dui magnis
-          facilisis at fringilla quam.
+        Nossa missão é conectar pessoas de todas as idades e origens por meio do poder dos mangás, ao mesmo tempo em que apoiamos artistas emergentes, proporcionando-lhes visibilidade. Junte-se a nós para vivenciar a magia dos mangás e embarcar em jornadas incríveis!
         </p>
+        
       </div>
     </div>
   );

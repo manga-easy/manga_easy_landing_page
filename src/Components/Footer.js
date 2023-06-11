@@ -1,24 +1,25 @@
 import React from "react";
-import Logo from "../Assets/Logo.svg";
-import { BsTwitter } from "react-icons/bs";
-import { SiLinkedin } from "react-icons/si";
-import { BsYoutube } from "react-icons/bs";
-import { FaFacebookF } from "react-icons/fa";
+import { SiDiscord } from "react-icons/si";
+import { SiInstagram } from "react-icons/si";
+import { SiGithub } from "react-icons/si";
 
 const Footer = () => {
   return (
     <div className="footer-wrapper">
-      <div className="footer-section-one">
-        <div className="footer-logo-container">
-          <img src={Logo} alt="" />
+      <p className="primary-subheading">Redes Sociais</p>
+
+      <div className="footer-logo">
+        <div className="logo">
+          <img src={'https://media.discordapp.net/attachments/1056304767023972373/1056304821419905124/logo_manga_easy.png?width=787&height=468'} alt="" />
         </div>
+
         <div className="footer-icons">
-          <BsTwitter />
-          <SiLinkedin />
-          <BsYoutube />
-          <FaFacebookF />
+          <SiDiscord />
+          <SiInstagram />
+          <SiGithub />
         </div>
-      </div>   
+
+      </div>
     </div>
   );
 };

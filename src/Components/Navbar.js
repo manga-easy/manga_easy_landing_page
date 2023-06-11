@@ -1,6 +1,5 @@
 /* eslint-disable jsx-a11y/anchor-is-valid */
 import React, { useState } from "react";
-import Logo from "../Assets/Logo.svg";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
@@ -38,8 +37,8 @@ const Navbar = () => {
   ];
   return (
     <nav>
-      <div className="nav-logo-container">
-        <img src={Logo} alt="" />
+      <div className="logo">
+        <img src={'https://media.discordapp.net/attachments/1056304767023972373/1056304821419905124/logo_manga_easy.png?width=787&height=468'} alt="" />
       </div>
       <div className="navbar-links-container">
         <a href="">Inicio</a>
