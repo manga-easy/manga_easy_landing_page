@@ -7,10 +7,18 @@ import Download from "./Components/Download";
 function App() {
   return (
     <div className="App">
+      <section id="Inicio">
       <Home />
+      </section>
+      <section id="Download">
       <Download />
+      </section>
+      <section id="Sobre">
       <About />
+      </section>
+      <section id="Redes-sociais">
       <Footer />
+      </section>
     </div>
   );
 }
