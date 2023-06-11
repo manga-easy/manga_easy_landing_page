@@ -14,9 +14,15 @@ const Footer = () => {
         </div>
 
         <div className="footer-icons">
+          <a href="https://discord.gg/manga-easy-867833103513550850" target="_blank" rel="noreferrer">
           <SiDiscord />
+          </a>
+          <a href="https://www.instagram.com/mangaeasyoficial_/" target="_blank" rel="noreferrer">
           <SiInstagram />
+          </a>
+          <a href="https://github.com/manga-easy" target="_blank" rel="noreferrer">
           <SiGithub />
+          </a>
         </div>
 
       </div>
