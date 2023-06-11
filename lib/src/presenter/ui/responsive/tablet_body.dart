@@ -25,7 +25,7 @@ class TabletBody extends StatelessWidget {
                 alignment: Alignment.topRight,
                 crossAlign: CrossAxisAlignment.end,
                 textAlign: TextAlign.right,
-                padding: const EdgeInsets.only(right: 30, top: 60, bottom: 50),
+                padding: const EdgeInsets.only(right: 30, top: 60, bottom: 0),
               ),
               const AboutProject(
                 padding:
