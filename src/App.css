@@ -193,7 +193,7 @@ nav {
 .footer-logo {
   display: flex;
   gap: 2rem;
-  margin-top: 2rem;
+  margin-top: 1rem;
   align-items: center;
   align-content: center;
 }
