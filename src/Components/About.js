@@ -14,7 +14,7 @@ const About = () => {
       <div className="about-section-text-container">
         <p className="primary-subheading">Sobre</p>
         <h1 className="primary-heading">
-          O Manga Easy é muito bom
+        Descubra o Universo dos Mangás Conosco!
         </h1>
         <p className="primary-text">
         O Manga Easy é uma plataforma online dedicada a compartilhar mangás emocionantes e diversos. Com uma biblioteca virtual em constante expansão, oferecemos aos amantes de mangá a oportunidade de explorar uma variedade de gêneros e histórias envolventes.
