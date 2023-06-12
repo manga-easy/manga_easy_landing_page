@@ -17,10 +17,13 @@ img {
   margin: 0rem auto;
 }
 
-html,
+html {
+  overflow-x: hidden !important;
+  scroll-behavior: smooth;
+}
+
 body {
   max-width: 100%;
-  overflow-x: hidden!important;
 }
 
 body {
@@ -84,8 +87,8 @@ nav {
 
 .home-bannerImage-container {
   position: absolute;
-  overflow-x: hidden!important;
-  overflow-y: hidden!important;
+  overflow-x: hidden !important;
+  overflow-y: hidden !important;
 
   top: -106px;
   right: -170px;
@@ -239,6 +242,9 @@ nav {
 }
 
 @media (max-width: 800px) {
+  body {
+    overflow-x: hidden;
+  }
   .nav-logo-container {
     max-width: 140px;
   }
