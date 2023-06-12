@@ -9,7 +9,7 @@ const Download = () => {
       </div>
       <div className="download-section-text-container">
         <div>
-          <p className="primary-subheading">Donwload</p>
+          <p className="primary-subheading">Download</p>
           <h1 className="primary-heading">
             Aqui você pode baixar a versão mais recente do nosso aplicativo.
           </h1>

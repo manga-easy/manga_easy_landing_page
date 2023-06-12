@@ -3,12 +3,7 @@ import React, { useState } from "react";
 import { HiOutlineBars3 } from "react-icons/hi2";
 import Box from "@mui/material/Box";
 import Drawer from "@mui/material/Drawer";
-import List from "@mui/material/List";
 import Divider from "@mui/material/Divider";
-import ListItem from "@mui/material/ListItem";
-import ListItemButton from "@mui/material/ListItemButton";
-import ListItemIcon from "@mui/material/ListItemIcon";
-import ListItemText from "@mui/material/ListItemText";
 import HomeIcon from "@mui/icons-material/Home";
 import InfoIcon from "@mui/icons-material/Info";
 import CommentRoundedIcon from "@mui/icons-material/CommentRounded";
@@ -41,6 +36,8 @@ const Navbar = () => {
   const handleMenuItemClick = (target) => {
     const targetSection = document.getElementById(target);
     targetSection.scrollIntoView({ behavior: "smooth" });
+    setOpenMenu(false);
+    console.log(target)
   };
   return (
     <nav>
@@ -68,16 +65,24 @@ const Navbar = () => {
           onClick={() => setOpenMenu(false)}
           onKeyDown={() => setOpenMenu(false)}
         >
-          <List>
-            {menuOptions.map((item) => (
-              <ListItem key={item.text} disablePadding>
-                <ListItemButton  onClick={() => handleMenuItemClick(item.target)}>
-                  <ListItemIcon>{item.icon}</ListItemIcon>
-                  <ListItemText primary={item.text} />
-                </ListItemButton>
-              </ListItem>
-            ))}
-          </List>
+          <div className="drawer">
+
+            <div className="logo">
+              <img src={'https://media.discordapp.net/attachments/1056304767023972373/1056304821419905124/logo_manga_easy.png?width=787&height=468'} alt="" />
+            </div>
+            <div className="drawer-links-container">
+              {menuOptions.map((item) => (
+                <a
+                className="button-style"
+                  key={item.text}
+                  href={`#${item.target}`}
+                  onClick={() => handleMenuItemClick(item.target)}
+                >
+                  {item.text}
+                </a>
+              ))}
+            </div>
+          </div>
           <Divider />
         </Box>
       </Drawer>
