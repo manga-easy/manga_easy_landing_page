@@ -24,10 +24,13 @@ html {
 
 body {
   max-width: 100%;
+  background-color: #f6f6f6;
 }
 
-body {
-  background-color: #f6f6f6;
+/* Classe para desabilitar elementos */
+.disabled {
+  pointer-events: none;
+  opacity: 0.5;
 }
 
 nav {
@@ -49,7 +52,6 @@ nav {
   font-weight: 600;
   border-bottom: transparent 2px solid;
   transition: border-color 0.3s ease;
-
 }
 
 .navbar-links-container a:hover {
@@ -87,7 +89,7 @@ nav {
   transition: box-shadow 0.3s ease;
 }
 
-.button-style:focus{
+.button-style:focus {
   outline: none;
   box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
 }
@@ -128,7 +130,6 @@ nav {
   position: relative;
   display: flex;
   padding-top: 3rem;
-
 }
 
 .home-bannerImage-container {
@@ -162,17 +163,13 @@ nav {
   font-size: clamp(2rem, 5vw, 4rem);
   color: #4c4c4c;
   line-height: 4rem;
-  /* max-width: 600px; */
   margin-bottom: 2rem;
-
 }
 
 .primary-text {
   font-size: clamp(1rem, 3vw, 1.5rem);
   max-width: 770px;
   color: #6a6a6a;
-  /* line-height: 1.5rem; */
-
   margin: .5rem 0rem;
 }
 
@@ -239,6 +236,44 @@ nav {
   display: flex;
 }
 
+/* Estilos para a seção de download */
+
+/* Contêiner da seção de download */
+.download-section-container {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+/* Estilo da imagem na seção de download */
+.download-section-container img {
+  width: 1000px;
+  filter: grayscale(100);
+}
+
+/* Contêiner da imagem na seção de download */
+.download-section-image-container {
+  margin-right: 1rem;
+}
+
+/* Contêiner do texto na seção de download */
+.download-section-text-container {
+  justify-content: center;
+  align-items: center;
+  margin-top: 2rem;
+  display: flex;
+  flex-direction: column;
+}
+
+/* Estilo para o parágrafo na seção de download */
+.download-versao p {
+  margin-top: 10px;
+  text-align: center;
+}
+
+/* Estilos para a seção de rodapé */
+
+/* Contêiner do rodapé */
 .footer-wrapper {
   display: flex;
   flex-direction: column;
@@ -247,6 +282,7 @@ nav {
   margin-top: 10rem;
 }
 
+/* Logotipo no rodapé */
 .footer-logo {
   display: flex;
   gap: 2rem;
@@ -254,11 +290,14 @@ nav {
   align-items: center;
   align-content: center;
 }
+
+/* Ícones no rodapé */
 .footer-icons {
   display: flex;
   gap: 10px;
 }
 
+/* Estilo dos links de ícones */
 .footer-icons a {
   display: inline-flex;
   align-items: center;
@@ -268,40 +307,48 @@ nav {
   padding: 10px;
   border-radius: 8px;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
-  transition: transform 0.3s ease;
-  transition: background-color 0.3s ease;
+  transition: transform 0.3s ease, background-color 0.3s ease;
 }
 
+/* Efeito de destaque ao passar o mouse sobre os ícones */
 .footer-icons a:hover {
   transform: translateY(-2px);
   background-color: #e48d0b;
-
 }
+
+/* Estilo dos ícones no rodapé */
 .footer-icons svg {
   font-size: 1.5rem;
-  /* margin-right: 1.25rem; */
   color: #fff;
 }
 
+/* Estilo para uma imagem de logotipo */
 .logo {
   filter: brightness(0);
   width: 135px;
 }
 
 @media (max-width: 1000px) {
+  /* Estilos para dispositivos com largura máxima de 1000px */
+
   .navbar-links-container a {
     margin-right: 1rem;
+    /* Reduz a margem direita dos links no navbar */
     font-size: 1rem;
+    /* Reduz o tamanho da fonte nos links no navbar */
   }
 
   .primary-button {
     font-size: 1rem;
+    /* Reduz o tamanho da fonte no botão primário */
   }
 
   .home-bannerImage-container {
     max-width: 600px;
+    /* Define a largura máxima do container da imagem na página inicial */
   }
 }
+
 
 @media (max-width: 800px) {
 
@@ -425,39 +472,7 @@ nav {
 }
 
 @media (max-width: 600px) {
-
-  .home-bannerImage-container,
-  .about-background-image-container {
-    /* display: none; */
-  }
-
   .download-section-container {
     flex-direction: column;
   }
-
-}
-
-.download-section-container {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-}
-
-.download-section-container img {
-  width: 1000px;
-  filter: grayscale(100);
-}
-
-.download-section-image-container {
-  /* flex: 0.9; */
-  margin-right: 1rem;
-
-}
-
-.download-section-text-container {
-  justify-content: center;
-  align-items: center;
-  margin-top: 2rem;
-  display: flex;
-  flex-direction: column;
 }
