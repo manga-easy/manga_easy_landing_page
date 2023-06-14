@@ -66,14 +66,13 @@ const Navbar = () => {
           onKeyDown={() => setOpenMenu(false)}
         >
           <div className="drawer">
-
             <div className="logo">
               <img src={'https://media.discordapp.net/attachments/1056304767023972373/1056304821419905124/logo_manga_easy.png?width=787&height=468'} alt="" />
             </div>
             <div className="drawer-links-container">
               {menuOptions.map((item) => (
                 <a
-                className="button-style"
+                  className="button-style"
                   key={item.text}
                   href={`#${item.target}`}
                   onClick={() => handleMenuItemClick(item.target)}

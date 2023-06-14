@@ -87,6 +87,8 @@ nav {
   border-radius: 5rem;
   box-shadow: 0 2px 4px rgba(0, 0, 0, 0.2);
   transition: box-shadow 0.3s ease;
+  width: 100%;
+  text-align: center;
 }
 
 .button-style:focus {
@@ -137,7 +139,7 @@ nav {
   overflow-x: hidden !important;
   overflow-y: hidden !important;
 
-  top: -106px;
+  top: -120px;
   right: -170px;
   z-index: -2;
   max-width: 700px;
@@ -325,7 +327,7 @@ nav {
 /* Estilo para uma imagem de logotipo */
 .logo {
   filter: brightness(0);
-  width: 135px;
+  width: 155px;
 }
 
 @media (max-width: 1000px) {
@@ -356,8 +358,8 @@ nav {
     display: flex;
     flex-direction: column;
     align-items: center;
-    margin: 10rem 0rem;
-    height: 100vh;
+    justify-content: center;
+    height: calc(100vh - 20px);
 
   }
 
@@ -474,5 +476,13 @@ nav {
 @media (max-width: 600px) {
   .download-section-container {
     flex-direction: column;
+  }
+
+  .secondary-button {
+    margin: 0;
+  }
+
+  .footer-wrapper {
+    margin-top: 4rem;
   }
 }
